@@ -10,6 +10,9 @@ interface MenuItem{
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styles: [
+    `li{
+      cursor:pointer;
+    }`
   ]
 })
 export class MenuComponent  {
@@ -17,8 +20,8 @@ export class MenuComponent  {
   menu:MenuItem[]=[
     {ruta:'./graficas/barra',texto:'Barras'},
     {ruta:'./graficas/barra-doble',texto:'Barras Dobles'},
-    {ruta:'./graficas/barra',texto:'barras'},
-    {ruta:'./graficas/barra',texto:'barras'},
+    {ruta:'./graficas/dona',texto:'Dona'},
+    {ruta:'./graficas/dona-http',texto:'Dona-Http'},
   ]
 
 }
