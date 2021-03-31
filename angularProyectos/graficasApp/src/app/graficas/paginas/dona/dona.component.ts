@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartType } from 'chart.js';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
 
@@ -8,7 +8,7 @@ import { Color, Label, MultiDataSet } from 'ng2-charts';
   styles: [
   ]
 })
-export class DonaComponent implements OnInit {
+export class DonaComponent{
 
   public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales','others'];
   public doughnutChartData: MultiDataSet = [
