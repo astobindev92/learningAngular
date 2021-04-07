@@ -1,7 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ChartType } from 'chart.js';
-import { Label, MultiDataSet } from 'ng2-charts';
+import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { GraficasService } from '../../servicios/graficas.service';
 
 @Component({
