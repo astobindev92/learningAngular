@@ -1,23 +1,24 @@
 const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
 
 ///Crear servidor/Aplicacion de express
-
 const app = express();
 
+/// Directorio Publico
+app.use(express.static('public'));
 
-//GET
-app.get('/', (req, res) => {
-    res.json({
-        ok: true,
-        msg: 'Todo Melaniiiiii'
-    });
-});
+///Cors
+app.use(cors());
+
+///lectura y parseo del Body
+app.use(express.json());
 
 
 app.use('/api/auth', require('./routes/auth'));
 
 
 
-app.listen(4000, () => {
-    console.log(`Servidor corriendo en puerto ${4000}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
 });
