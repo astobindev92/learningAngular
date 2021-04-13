@@ -85,7 +85,6 @@ const loginUsuario = async(req, res = response) => {
             oK: true,
             uid: dbUser.id,
             nombre: dbUser.nombre,
-            MediaStreamTrackAudioSourceNode
         })
 
 
