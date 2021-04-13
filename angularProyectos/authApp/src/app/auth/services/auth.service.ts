@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
+
   private baseUrl: string = environment.baseUrl;
   private _usuario!: Usuario;
 
@@ -20,10 +21,12 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
+
     const url = `${this.baseUrl}/auth`;
     const body = { email, password };
 
     return this.http.post<AuthResponse>(url, body).pipe(
+
       tap((resp) => {
         if (resp.oK) {
           localStorage.setItem('token', resp.token);

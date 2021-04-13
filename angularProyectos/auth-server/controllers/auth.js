@@ -107,16 +107,18 @@ const loginUsuario = async(req, res = response) => {
 
 const renovarToken = async(req, res = response) => {
 
-    const { uid, nombre } = req;
-    console.log(uid,nombre);
+    const { uid, name } = req;
 
-    //const token = await generarJWT(uid, nombre);
+    // Genera JSON WEBtoken
+    const token = await generarJWT(uid, name);
+
+
 
     return res.json({
         ok: true,
         uid,
-        nombre,
-   
+        name,
+        token
     });
 }
 

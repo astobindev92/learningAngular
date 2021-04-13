@@ -11,9 +11,10 @@ import { AuthService } from '../../services/auth.service';
   styles: [],
 })
 export class LoginComponent {
+
   miFormulario: FormGroup = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    email: ['test@test.com', [Validators.required, Validators.email]],
+    password: ['123456', [Validators.required, Validators.minLength(6)]],
   });
 
   constructor(
@@ -23,8 +24,6 @@ export class LoginComponent {
   ) {}
 
   login() {
-    console.log(this.miFormulario.value);
-
     const { email, password } = this.miFormulario.value;
 
     this.authService.login(email, password).subscribe((oK) => {
@@ -36,6 +35,6 @@ export class LoginComponent {
         Swal.fire('ERROR', oK, 'error');
       }
     });
-    this.router.navigateByUrl('/dashboard');
+     this.router.navigateByUrl('/dashboard');
   }
 }

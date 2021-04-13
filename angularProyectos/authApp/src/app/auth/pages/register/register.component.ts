@@ -12,9 +12,9 @@ export class RegisterComponent{
 
   miFormulario:FormGroup=this.fb.group({
 
-    nombre:['',[Validators.required]],
-    email:['',[Validators.required,Validators.email]],
-    password:['',[Validators.required,Validators.minLength(6)]]
+    nombre:['test1',[Validators.required]],
+    email:['test1@test.com',[Validators.required,Validators.email]],
+    password:['123456',[Validators.required,Validators.minLength(6)]]
 
   })
 
